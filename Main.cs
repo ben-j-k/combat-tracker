@@ -198,6 +198,8 @@ namespace CombatTracker
             Rectangle workingRectangle = Screen.PrimaryScreen.WorkingArea;
             this.Size = new Size(Convert.ToInt32(0.5 * workingRectangle.Width), Convert.ToInt32(0.5 * workingRectangle.Height));
             this.Location = new Point(Convert.ToInt32(workingRectangle.Width/4), Convert.ToInt32(workingRectangle.Height/4));
+
+            pictureBox1.Left = (this.ClientSize.Width - pictureBox1.Width) / 2;
         }
 
         public void RefreshForm(List<Combatant> newCombatants)
@@ -207,6 +209,12 @@ namespace CombatTracker
                 combatants.Add(newCombatant);
             }
             InitializeDataGridView();
+        }
+
+        private void Resize(object sender, EventArgs e)
+        {
+            // Set the PictureBox position to keep it centered
+            pictureBox1.Left = (this.ClientSize.Width - pictureBox1.Width) / 2;
         }
 
         private void btnRefresh_Click(object sender, EventArgs e)

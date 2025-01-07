@@ -40,9 +40,11 @@
             // 
             // label1
             // 
+            label1.Anchor = AnchorStyles.Top;
             label1.AutoSize = true;
             label1.Font = new Font("Poor Richard", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(85, 21);
+            label1.ForeColor = Color.DarkGreen;
+            label1.Location = new Point(90, 20);
             label1.Name = "label1";
             label1.Size = new Size(263, 24);
             label1.TabIndex = 0;
@@ -50,9 +52,10 @@
             // 
             // label2
             // 
+            label2.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             label2.AutoSize = true;
             label2.Font = new Font("Century Gothic", 9.75F);
-            label2.Location = new Point(114, 54);
+            label2.Location = new Point(114, 60);
             label2.Name = "label2";
             label2.Size = new Size(90, 17);
             label2.TabIndex = 1;
@@ -60,21 +63,23 @@
             // 
             // txtName
             // 
+            txtName.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             txtName.BackColor = Color.FloralWhite;
             txtName.BorderStyle = BorderStyle.None;
             txtName.Font = new Font("Perpetua Titling MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtName.Location = new Point(85, 72);
+            txtName.Location = new Point(85, 78);
             txtName.Name = "txtName";
             txtName.ReadOnly = true;
-            txtName.Size = new Size(263, 19);
+            txtName.Size = new Size(272, 19);
             txtName.TabIndex = 2;
             txtName.TextAlign = HorizontalAlignment.Center;
             // 
             // label3
             // 
+            label3.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             label3.AutoSize = true;
             label3.Font = new Font("Century Gothic", 9.75F);
-            label3.Location = new Point(114, 107);
+            label3.Location = new Point(116, 131);
             label3.Name = "label3";
             label3.Size = new Size(66, 17);
             label3.TabIndex = 3;
@@ -82,24 +87,26 @@
             // 
             // txtDC
             // 
+            txtDC.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             txtDC.BackColor = Color.FloralWhite;
             txtDC.BorderStyle = BorderStyle.None;
             txtDC.Font = new Font("Perpetua Titling MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtDC.Location = new Point(141, 125);
+            txtDC.Location = new Point(143, 149);
             txtDC.Name = "txtDC";
             txtDC.ReadOnly = true;
-            txtDC.Size = new Size(142, 19);
+            txtDC.Size = new Size(151, 19);
             txtDC.TabIndex = 4;
             txtDC.TextAlign = HorizontalAlignment.Center;
             // 
             // btnFailed
             // 
+            btnFailed.Anchor = AnchorStyles.Bottom;
             btnFailed.BackColor = Color.DarkGreen;
             btnFailed.FlatAppearance.MouseOverBackColor = Color.ForestGreen;
             btnFailed.FlatStyle = FlatStyle.Flat;
             btnFailed.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnFailed.ForeColor = Color.FloralWhite;
-            btnFailed.Location = new Point(74, 158);
+            btnFailed.Location = new Point(90, 191);
             btnFailed.Name = "btnFailed";
             btnFailed.Size = new Size(129, 36);
             btnFailed.TabIndex = 1;
@@ -109,12 +116,13 @@
             // 
             // btnPass
             // 
+            btnPass.Anchor = AnchorStyles.Bottom;
             btnPass.BackColor = Color.DarkGreen;
             btnPass.FlatAppearance.MouseOverBackColor = Color.ForestGreen;
             btnPass.FlatStyle = FlatStyle.Flat;
             btnPass.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnPass.ForeColor = Color.FloralWhite;
-            btnPass.Location = new Point(209, 158);
+            btnPass.Location = new Point(225, 191);
             btnPass.Name = "btnPass";
             btnPass.Size = new Size(129, 36);
             btnPass.TabIndex = 2;
@@ -127,7 +135,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FloralWhite;
-            ClientSize = new Size(405, 214);
+            ClientSize = new Size(438, 239);
             Controls.Add(btnPass);
             Controls.Add(btnFailed);
             Controls.Add(txtDC);
@@ -136,6 +144,7 @@
             Controls.Add(label2);
             Controls.Add(label1);
             Icon = (Icon)resources.GetObject("$this.Icon");
+            MinimumSize = new Size(454, 278);
             Name = "ConCheck";
             StartPosition = FormStartPosition.CenterParent;
             Text = "Concentration Check";

@@ -40,6 +40,7 @@
             // 
             // numDmgHeal
             // 
+            numDmgHeal.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             numDmgHeal.BackColor = Color.White;
             numDmgHeal.BorderStyle = BorderStyle.None;
             numDmgHeal.Font = new Font("Perpetua Titling MT", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -52,9 +53,10 @@
             // 
             // label1
             // 
+            label1.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             label1.AutoSize = true;
             label1.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.Location = new Point(121, 59);
+            label1.Location = new Point(120, 59);
             label1.Name = "label1";
             label1.Size = new Size(90, 17);
             label1.TabIndex = 4;
@@ -62,10 +64,11 @@
             // 
             // txtCombatant
             // 
+            txtCombatant.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             txtCombatant.BackColor = Color.FloralWhite;
             txtCombatant.BorderStyle = BorderStyle.None;
             txtCombatant.Font = new Font("Perpetua Titling MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtCombatant.Location = new Point(69, 79);
+            txtCombatant.Location = new Point(70, 79);
             txtCombatant.Name = "txtCombatant";
             txtCombatant.ReadOnly = true;
             txtCombatant.Size = new Size(202, 19);
@@ -74,12 +77,14 @@
             // 
             // btnHeal
             // 
+            btnHeal.Anchor = AnchorStyles.Bottom;
             btnHeal.BackColor = Color.DarkGreen;
             btnHeal.FlatAppearance.MouseOverBackColor = Color.ForestGreen;
             btnHeal.FlatStyle = FlatStyle.Flat;
             btnHeal.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnHeal.ForeColor = Color.FloralWhite;
             btnHeal.Location = new Point(76, 157);
+            btnHeal.MinimumSize = new Size(93, 36);
             btnHeal.Name = "btnHeal";
             btnHeal.Size = new Size(93, 36);
             btnHeal.TabIndex = 17;
@@ -89,12 +94,14 @@
             // 
             // btnDamage
             // 
+            btnDamage.Anchor = AnchorStyles.Bottom;
             btnDamage.BackColor = Color.DarkGreen;
             btnDamage.FlatAppearance.MouseOverBackColor = Color.ForestGreen;
             btnDamage.FlatStyle = FlatStyle.Flat;
             btnDamage.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnDamage.ForeColor = Color.FloralWhite;
             btnDamage.Location = new Point(172, 157);
+            btnDamage.MinimumSize = new Size(93, 36);
             btnDamage.Name = "btnDamage";
             btnDamage.Size = new Size(93, 36);
             btnDamage.TabIndex = 18;
@@ -106,6 +113,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Poor Richard", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.ForeColor = Color.DarkGreen;
             label2.Location = new Point(57, 21);
             label2.Name = "label2";
             label2.Size = new Size(230, 24);
@@ -126,6 +134,7 @@
             Controls.Add(label1);
             Controls.Add(numDmgHeal);
             Icon = (Icon)resources.GetObject("$this.Icon");
+            MinimumSize = new Size(343, 240);
             Name = "DamageHeal";
             StartPosition = FormStartPosition.CenterParent;
             Text = "Damage or Healing";

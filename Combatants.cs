@@ -59,7 +59,7 @@ namespace CombatTracker
             lblAddConfirm.Text = $"Combatant {combatant.Name} added";
             lbCombatants.Items.Add(Convert.ToString(combatant.Name));
             newCombatants.Add(combatant);
-            
+
 
 
         }
@@ -107,6 +107,11 @@ namespace CombatTracker
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void AddForm_Load(object sender, EventArgs e)
         {
 
         }

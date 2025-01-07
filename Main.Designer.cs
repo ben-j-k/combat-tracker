@@ -248,7 +248,7 @@
             // 
             pictureBox1.BackgroundImage = Properties.Resources.CombatTrackerTxt;
             pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
-            pictureBox1.Location = new Point(139, 93);
+            pictureBox1.Location = new Point(132, 97);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(686, 73);
             pictureBox1.TabIndex = 23;
@@ -256,7 +256,9 @@
             // 
             // BaseForm
             // 
-            AutoScaleMode = AutoScaleMode.None;
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            AutoSize = true;
             BackColor = Color.FloralWhite;
             ClientSize = new Size(925, 626);
             Controls.Add(pictureBox1);

@@ -38,11 +38,6 @@ D:\TAFE\Cert IV\Programming\Wk13\Fri\CombatTracker\CombatTracker\obj\Debug\net8.
 D:\TAFE\Cert IV\Programming\Wk13\Fri\CombatTracker\CombatTracker\obj\Debug\net8.0-windows\CombatTracker.pdb
 D:\TAFE\Cert IV\Programming\Wk13\Fri\CombatTracker\CombatTracker\obj\Debug\net8.0-windows\CombatTracker.genruntimeconfig.cache
 D:\TAFE\Cert IV\Programming\Wk13\Fri\CombatTracker\CombatTracker\obj\Debug\net8.0-windows\ref\CombatTracker.dll
-D:\TAFE\Cert IV\Programming\CombatTracker\CombatTracker\bin\Debug\net8.0-windows\CombatTracker.exe
-D:\TAFE\Cert IV\Programming\CombatTracker\CombatTracker\bin\Debug\net8.0-windows\CombatTracker.deps.json
-D:\TAFE\Cert IV\Programming\CombatTracker\CombatTracker\bin\Debug\net8.0-windows\CombatTracker.runtimeconfig.json
-D:\TAFE\Cert IV\Programming\CombatTracker\CombatTracker\bin\Debug\net8.0-windows\CombatTracker.dll
-D:\TAFE\Cert IV\Programming\CombatTracker\CombatTracker\bin\Debug\net8.0-windows\CombatTracker.pdb
 D:\TAFE\Cert IV\Programming\CombatTracker\CombatTracker\obj\Debug\net8.0-windows\CombatTracker.ConCheck.resources
 D:\TAFE\Cert IV\Programming\CombatTracker\CombatTracker\obj\Debug\net8.0-windows\CombatTracker.DamageHeal.resources
 D:\TAFE\Cert IV\Programming\CombatTracker\CombatTracker\obj\Debug\net8.0-windows\CombatTracker.BaseForm.resources
@@ -53,9 +48,15 @@ D:\TAFE\Cert IV\Programming\CombatTracker\CombatTracker\obj\Debug\net8.0-windows
 D:\TAFE\Cert IV\Programming\CombatTracker\CombatTracker\obj\Debug\net8.0-windows\CombatTracker.AssemblyInfoInputs.cache
 D:\TAFE\Cert IV\Programming\CombatTracker\CombatTracker\obj\Debug\net8.0-windows\CombatTracker.AssemblyInfo.cs
 D:\TAFE\Cert IV\Programming\CombatTracker\CombatTracker\obj\Debug\net8.0-windows\CombatTracker.csproj.CoreCompileInputs.cache
-D:\TAFE\Cert IV\Programming\CombatTracker\CombatTracker\obj\Debug\net8.0-windows\CombatTracker.dll
-D:\TAFE\Cert IV\Programming\CombatTracker\CombatTracker\obj\Debug\net8.0-windows\refint\CombatTracker.dll
-D:\TAFE\Cert IV\Programming\CombatTracker\CombatTracker\obj\Debug\net8.0-windows\CombatTracker.pdb
 D:\TAFE\Cert IV\Programming\CombatTracker\CombatTracker\obj\Debug\net8.0-windows\CombatTracker.genruntimeconfig.cache
-D:\TAFE\Cert IV\Programming\CombatTracker\CombatTracker\obj\Debug\net8.0-windows\ref\CombatTracker.dll
 D:\TAFE\Cert IV\Programming\CombatTracker\CombatTracker\obj\Debug\net8.0-windows\CombatTracker.Effects.resources
+D:\TAFE\Cert IV\Programming\CombatTracker\CombatTracker\bin\Debug\net8.0-windows\Combat Tracker.exe
+D:\TAFE\Cert IV\Programming\CombatTracker\CombatTracker\bin\Debug\net8.0-windows\Combat Tracker.deps.json
+D:\TAFE\Cert IV\Programming\CombatTracker\CombatTracker\bin\Debug\net8.0-windows\Combat Tracker.runtimeconfig.json
+D:\TAFE\Cert IV\Programming\CombatTracker\CombatTracker\bin\Debug\net8.0-windows\Combat Tracker.dll
+D:\TAFE\Cert IV\Programming\CombatTracker\CombatTracker\bin\Debug\net8.0-windows\Combat Tracker.pdb
+D:\TAFE\Cert IV\Programming\CombatTracker\CombatTracker\obj\Debug\net8.0-windows\CombatTracker.sourcelink.json
+D:\TAFE\Cert IV\Programming\CombatTracker\CombatTracker\obj\Debug\net8.0-windows\Combat Tracker.dll
+D:\TAFE\Cert IV\Programming\CombatTracker\CombatTracker\obj\Debug\net8.0-windows\refint\Combat Tracker.dll
+D:\TAFE\Cert IV\Programming\CombatTracker\CombatTracker\obj\Debug\net8.0-windows\Combat Tracker.pdb
+D:\TAFE\Cert IV\Programming\CombatTracker\CombatTracker\obj\Debug\net8.0-windows\ref\Combat Tracker.dll

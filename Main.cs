@@ -192,9 +192,12 @@ namespace CombatTracker
 
         }
 
+        //Resize on load based on client viewport
         private void BaseForm_Load(object sender, EventArgs e)
         {
-
+            Rectangle workingRectangle = Screen.PrimaryScreen.WorkingArea;
+            this.Size = new Size(Convert.ToInt32(0.5 * workingRectangle.Width), Convert.ToInt32(0.5 * workingRectangle.Height));
+            this.Location = new Point(Convert.ToInt32(workingRectangle.Width/4), Convert.ToInt32(workingRectangle.Height/4));
         }
 
         public void RefreshForm(List<Combatant> newCombatants)

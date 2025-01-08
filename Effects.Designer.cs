@@ -45,7 +45,7 @@
             label1.Anchor = AnchorStyles.Top;
             label1.AutoSize = true;
             label1.Font = new Font("Century Gothic", 9.75F);
-            label1.Location = new Point(39, 67);
+            label1.Location = new Point(106, 67);
             label1.Name = "label1";
             label1.Size = new Size(90, 17);
             label1.TabIndex = 3;
@@ -56,7 +56,7 @@
             label2.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             label2.AutoSize = true;
             label2.Font = new Font("Century Gothic", 9.75F);
-            label2.Location = new Point(39, 261);
+            label2.Location = new Point(39, 334);
             label2.Name = "label2";
             label2.Size = new Size(138, 17);
             label2.TabIndex = 4;
@@ -70,9 +70,9 @@
             lbFalseConditions.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lbFalseConditions.FormattingEnabled = true;
             lbFalseConditions.ItemHeight = 17;
-            lbFalseConditions.Location = new Point(40, 281);
+            lbFalseConditions.Location = new Point(40, 354);
             lbFalseConditions.Name = "lbFalseConditions";
-            lbFalseConditions.Size = new Size(163, 153);
+            lbFalseConditions.Size = new Size(297, 153);
             lbFalseConditions.TabIndex = 6;
             // 
             // lbTrueConditions
@@ -85,8 +85,9 @@
             lbTrueConditions.ItemHeight = 17;
             lbTrueConditions.Location = new Point(39, 153);
             lbTrueConditions.Name = "lbTrueConditions";
-            lbTrueConditions.Size = new Size(163, 51);
+            lbTrueConditions.Size = new Size(297, 119);
             lbTrueConditions.TabIndex = 8;
+            lbTrueConditions.SelectedIndexChanged += lbTrueConditions_SelectedIndexChanged;
             // 
             // label3
             // 
@@ -105,7 +106,7 @@
             txtName.BackColor = Color.FloralWhite;
             txtName.BorderStyle = BorderStyle.None;
             txtName.Font = new Font("Perpetua Titling MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtName.Location = new Point(39, 87);
+            txtName.Location = new Point(106, 87);
             txtName.Name = "txtName";
             txtName.Size = new Size(163, 19);
             txtName.TabIndex = 11;
@@ -119,7 +120,7 @@
             btnRemove.FlatStyle = FlatStyle.Flat;
             btnRemove.Font = new Font("Century Gothic", 9.75F);
             btnRemove.ForeColor = Color.FloralWhite;
-            btnRemove.Location = new Point(39, 210);
+            btnRemove.Location = new Point(106, 283);
             btnRemove.Name = "btnRemove";
             btnRemove.Size = new Size(163, 36);
             btnRemove.TabIndex = 18;
@@ -135,7 +136,7 @@
             btnAdd.FlatStyle = FlatStyle.Flat;
             btnAdd.Font = new Font("Century Gothic", 9.75F);
             btnAdd.ForeColor = Color.FloralWhite;
-            btnAdd.Location = new Point(41, 440);
+            btnAdd.Location = new Point(108, 513);
             btnAdd.Name = "btnAdd";
             btnAdd.Size = new Size(161, 36);
             btnAdd.TabIndex = 19;
@@ -149,7 +150,7 @@
             label4.AutoSize = true;
             label4.Font = new Font("Poor Richard", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label4.ForeColor = Color.DarkGreen;
-            label4.Location = new Point(41, 21);
+            label4.Location = new Point(108, 21);
             label4.Name = "label4";
             label4.Size = new Size(170, 24);
             label4.TabIndex = 20;
@@ -160,7 +161,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FloralWhite;
-            ClientSize = new Size(244, 490);
+            ClientSize = new Size(378, 563);
             Controls.Add(label4);
             Controls.Add(btnAdd);
             Controls.Add(btnRemove);

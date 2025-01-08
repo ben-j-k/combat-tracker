@@ -6,10 +6,7 @@ namespace CombatTracker
 {
     public partial class BaseForm : Form
     {
-        public List<Combatant> combatants { get; set; }
-        private int roundNumber = 0;
-        private int currentPlayerIndex = 0;
-        private int selectedCombatant = 0;
+        public GameState Game = new GameState("", DateTime.Now, [], 0, 0, 0);
         AddForm addForm = new AddForm();
         public BaseForm()
         {
@@ -18,9 +15,9 @@ namespace CombatTracker
 
         public void InitializeDataGridView()
         {
-            combatants = combatants.OrderByDescending(combatant => combatant.Initiative).ToList();
+            Game.Combatants = Game.Combatants.OrderByDescending(combatant => combatant.Initiative).ToList();
 
-            dataGridViewRounds.DataSource = combatants;
+            dataGridViewRounds.DataSource = Game.Combatants;
 
             dataGridViewRounds.Columns[0].Width = (int)(dataGridViewRounds.Width * 0.1);
             dataGridViewRounds.Columns[0].HeaderText = "Concentration";
@@ -39,52 +36,52 @@ namespace CombatTracker
 
         private void dataGridViewRounds_SelectionChanged(object? sender, EventArgs e)
         {
-            selectedCombatant = dataGridViewRounds.CurrentCell.RowIndex;
+            Game.SelectedCombatant = dataGridViewRounds.CurrentCell.RowIndex;
         }
 
         private void AddNewRoundColumn()
         {
-            roundNumber++;
-            txtRoundNum.Text = roundNumber.ToString();
+            Game.RoundNumber++;
+            txtRoundNum.Text = Game.RoundNumber.ToString();
         }
 
         private void HighlightCurrentTurn()
         {
-            if (currentPlayerIndex == 0)
+            if (Game.CurrentPlayerIndex == 0)
             {
-                if (combatants[combatants.Count - 1].CurrentHP <= 0)
+                if (Game.Combatants[Game.Combatants.Count - 1].CurrentHP <= 0)
                 {
-                    dataGridViewRounds.Rows[combatants.Count - 1].DefaultCellStyle.BackColor = Color.OrangeRed;
+                    dataGridViewRounds.Rows[Game.Combatants.Count - 1].DefaultCellStyle.BackColor = Color.OrangeRed;
                 }
                 else
                 {
-                    dataGridViewRounds.Rows[combatants.Count - 1].DefaultCellStyle.BackColor = Color.FloralWhite;
+                    dataGridViewRounds.Rows[Game.Combatants.Count - 1].DefaultCellStyle.BackColor = Color.FloralWhite;
                 }
 
             }
-            else if (currentPlayerIndex >= 1 && currentPlayerIndex < combatants.Count)
+            else if (Game.CurrentPlayerIndex >= 1 && Game.CurrentPlayerIndex < Game.Combatants.Count)
             {
-                if (combatants[currentPlayerIndex - 1].CurrentHP <= 0)
+                if (Game.Combatants[Game.CurrentPlayerIndex - 1].CurrentHP <= 0)
                 {
-                    dataGridViewRounds.Rows[currentPlayerIndex - 1].DefaultCellStyle.BackColor = Color.OrangeRed;
+                    dataGridViewRounds.Rows[Game.CurrentPlayerIndex - 1].DefaultCellStyle.BackColor = Color.OrangeRed;
                 }
                 else
                 {
-                    dataGridViewRounds.Rows[currentPlayerIndex - 1].DefaultCellStyle.BackColor = Color.FloralWhite;
+                    dataGridViewRounds.Rows[Game.CurrentPlayerIndex - 1].DefaultCellStyle.BackColor = Color.FloralWhite;
                 }
             }
-            else if (currentPlayerIndex == combatants.Count) { }
+            else if (Game.CurrentPlayerIndex == Game.Combatants.Count) { }
 
-            dataGridViewRounds.Rows[currentPlayerIndex].DefaultCellStyle.BackColor = Color.DarkOrange;
+            dataGridViewRounds.Rows[Game.CurrentPlayerIndex].DefaultCellStyle.BackColor = Color.DarkOrange;
         }
 
         private void SelectNextTurn()
         {
-            currentPlayerIndex++;
-            if (currentPlayerIndex >= dataGridViewRounds.Rows.Count)
+            Game.CurrentPlayerIndex++;
+            if (Game.CurrentPlayerIndex >= dataGridViewRounds.Rows.Count)
             {
                 AddNewRoundColumn();
-                currentPlayerIndex = 0;
+                Game.CurrentPlayerIndex = 0;
             }
             HighlightCurrentTurn();
 
@@ -93,10 +90,10 @@ namespace CombatTracker
 
         private void SelectPreviousTurn()
         {
-            if (currentPlayerIndex == 0)
+            if (Game.CurrentPlayerIndex == 0)
             {
-                currentPlayerIndex = combatants.Count - 1;
-                if (combatants[0].CurrentHP <= 0)
+                Game.CurrentPlayerIndex = Game.Combatants.Count - 1;
+                if (Game.Combatants[0].CurrentHP <= 0)
                 {
                     dataGridViewRounds.Rows[0].DefaultCellStyle.BackColor = Color.OrangeRed;
                 }
@@ -104,25 +101,25 @@ namespace CombatTracker
                 {
                     dataGridViewRounds.Rows[0].DefaultCellStyle.BackColor = Color.FloralWhite;
                 }
-                roundNumber--;
-                txtRoundNum.Text = roundNumber.ToString();
+                Game.RoundNumber--;
+                txtRoundNum.Text = Game.RoundNumber.ToString();
             }
 
-            else if (currentPlayerIndex >= 1 && currentPlayerIndex < combatants.Count)
+            else if (Game.CurrentPlayerIndex >= 1 && Game.CurrentPlayerIndex < Game.Combatants.Count)
             {
-                currentPlayerIndex--;
-                if (combatants[currentPlayerIndex + 1].CurrentHP <= 0)
+                Game.CurrentPlayerIndex--;
+                if (Game.Combatants[Game.CurrentPlayerIndex + 1].CurrentHP <= 0)
                 {
-                    dataGridViewRounds.Rows[currentPlayerIndex + 1].DefaultCellStyle.BackColor = Color.OrangeRed;
+                    dataGridViewRounds.Rows[Game.CurrentPlayerIndex + 1].DefaultCellStyle.BackColor = Color.OrangeRed;
                 }
                 else
                 {
-                    dataGridViewRounds.Rows[currentPlayerIndex + 1].DefaultCellStyle.BackColor = Color.FloralWhite;
+                    dataGridViewRounds.Rows[Game.CurrentPlayerIndex + 1].DefaultCellStyle.BackColor = Color.FloralWhite;
                 }
             }
-            else if (currentPlayerIndex == combatants.Count) { }
+            else if (Game.CurrentPlayerIndex == Game.Combatants.Count) { }
 
-            dataGridViewRounds.Rows[currentPlayerIndex].DefaultCellStyle.BackColor = Color.DarkOrange;
+            dataGridViewRounds.Rows[Game.CurrentPlayerIndex].DefaultCellStyle.BackColor = Color.DarkOrange;
         }
 
         private void ConcentrationClicked(object sender, DataGridViewCellEventArgs e)
@@ -153,38 +150,38 @@ namespace CombatTracker
 
         private void btnDamageHeal_Click(object sender, EventArgs e)
         {
-            if (combatants == null)
+            if (Game.Combatants == null)
             {
                 MessageBox.Show("Please select a combatant to damage or heal"); return;
             }
-            selectedCombatant = dataGridViewRounds.CurrentCell.RowIndex;
-            DamageHeal damageHeal = new DamageHeal(combatants[selectedCombatant]);
+            Game.SelectedCombatant = dataGridViewRounds.CurrentCell.RowIndex;
+            DamageHeal damageHeal = new DamageHeal(Game.Combatants[Game.SelectedCombatant]);
             damageHeal.ShowDialog();
             if (damageHeal.isHeal)
             {
-                combatants[selectedCombatant].CurrentHP = combatants[selectedCombatant].CurrentHP + damageHeal.healing;
-                if (combatants[selectedCombatant].CurrentHP > combatants[selectedCombatant].MaxHP)
+                Game.Combatants[Game.SelectedCombatant].CurrentHP = Game.Combatants[Game.SelectedCombatant].CurrentHP + damageHeal.healing;
+                if (Game.Combatants[Game.SelectedCombatant].CurrentHP > Game.Combatants[Game.SelectedCombatant].MaxHP)
                 {
-                    combatants[selectedCombatant].CurrentHP = combatants[selectedCombatant].MaxHP;
+                    Game.Combatants[Game.SelectedCombatant].CurrentHP = Game.Combatants[Game.SelectedCombatant].MaxHP;
                 }
             }
             else
             {
-                combatants[selectedCombatant].CurrentHP = combatants[selectedCombatant].CurrentHP - damageHeal.damage;
-                if (combatants[selectedCombatant].IsConcentrating)
+                Game.Combatants[Game.SelectedCombatant].CurrentHP = Game.Combatants[Game.SelectedCombatant].CurrentHP - damageHeal.damage;
+                if (Game.Combatants[Game.SelectedCombatant].IsConcentrating)
                 {
-                    ConCheck conCheck = new ConCheck(combatants[selectedCombatant], damageHeal.damage);
+                    ConCheck conCheck = new ConCheck(Game.Combatants[Game.SelectedCombatant], damageHeal.damage);
                     conCheck.ShowDialog();
                     if (!conCheck.Passed)
                     {
-                        combatants[selectedCombatant].IsConcentrating = false;
+                        Game.Combatants[Game.SelectedCombatant].IsConcentrating = false;
                     }
                 }
-                if (combatants[selectedCombatant].CurrentHP <= 0)
+                if (Game.Combatants[Game.SelectedCombatant].CurrentHP <= 0)
                 {
-                    MessageBox.Show($"{combatants[selectedCombatant].Name} is dead/unconscious");
-                    combatants[selectedCombatant].CurrentHP = 0;
-                    dataGridViewRounds.Rows[selectedCombatant].DefaultCellStyle.BackColor = Color.OrangeRed;
+                    MessageBox.Show($"{Game.Combatants[Game.SelectedCombatant].Name} is dead/unconscious");
+                    Game.Combatants[Game.SelectedCombatant].CurrentHP = 0;
+                    dataGridViewRounds.Rows[Game.SelectedCombatant].DefaultCellStyle.BackColor = Color.OrangeRed;
                 }
 
             }
@@ -197,7 +194,7 @@ namespace CombatTracker
         {
             Rectangle workingRectangle = Screen.PrimaryScreen.WorkingArea;
             this.Size = new Size(Convert.ToInt32(0.5 * workingRectangle.Width), Convert.ToInt32(0.5 * workingRectangle.Height));
-            this.Location = new Point(Convert.ToInt32(workingRectangle.Width/4), Convert.ToInt32(workingRectangle.Height/4));
+            this.Location = new Point(Convert.ToInt32(workingRectangle.Width / 4), Convert.ToInt32(workingRectangle.Height / 4));
 
             pictureBox1.Left = (this.ClientSize.Width - pictureBox1.Width) / 2;
         }
@@ -206,7 +203,7 @@ namespace CombatTracker
         {
             foreach (Combatant newCombatant in newCombatants)
             {
-                combatants.Add(newCombatant);
+                Game.Combatants.Add(newCombatant);
             }
             InitializeDataGridView();
         }
@@ -219,7 +216,7 @@ namespace CombatTracker
 
         private void btnRefresh_Click(object sender, EventArgs e)
         {
-            combatants = addForm.newCombatants;
+            Game.Combatants = addForm.newCombatants;
             InitializeDataGridView();
         }
 
@@ -230,12 +227,12 @@ namespace CombatTracker
 
         private void btnStart_Click(object sender, EventArgs e)
         {
-            if (combatants == null)
+            if (Game.Combatants == null)
             {
                 MessageBox.Show("At least one combatant is required for combat");
                 return;
             }
-            else if (combatants.Count == 0)
+            else if (Game.Combatants.Count == 0)
             {
                 MessageBox.Show("At least one combatant is required for combat");
                 return;
@@ -252,18 +249,18 @@ namespace CombatTracker
 
         private void dataGridViewRounds_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            selectedCombatant = dataGridViewRounds.CurrentCell.RowIndex;
+            Game.SelectedCombatant = dataGridViewRounds.CurrentCell.RowIndex;
 
         }
 
         private void btnStatus_Click(object sender, EventArgs e)
         {
-            if (combatants == null)
+            if (Game.Combatants == null)
             {
                 MessageBox.Show("Please select a combatant to modify active conditions"); return;
             }
-            selectedCombatant = dataGridViewRounds.CurrentCell.RowIndex;
-            Combatant c = combatants[selectedCombatant];
+            Game.SelectedCombatant = dataGridViewRounds.CurrentCell.RowIndex;
+            Combatant c = Game.Combatants[Game.SelectedCombatant];
             Effects manageStatusConditions = new Effects(c);
             manageStatusConditions.ShowDialog();
 
@@ -284,13 +281,19 @@ namespace CombatTracker
         {
             AddForm addForm = new AddForm();
             addForm.AddDemoData();
-            combatants = addForm.newCombatants;
+            Game.Combatants = addForm.newCombatants;
             InitializeDataGridView();
         }
 
         private void label1_Click_1(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnSaveLoad_Click(object sender, EventArgs e)
+        {
+            Save save = new Save(Game);
+            save.ShowDialog();
         }
     }
 }

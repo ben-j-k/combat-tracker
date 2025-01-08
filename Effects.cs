@@ -88,5 +88,10 @@ namespace CombatTracker
             Close();
 
         }
+
+        private void lbTrueConditions_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

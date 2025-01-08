@@ -24,4 +24,5 @@ public class GameState
         CurrentPlayerIndex = currentPlayerIndex;
         SelectedCombatant = selectedCombatant;
     }
+    public GameState() { }
 }

@@ -118,6 +118,7 @@
             Controls.Add(lbSaves);
             MinimumSize = new Size(489, 366);
             Name = "Save";
+            StartPosition = FormStartPosition.CenterParent;
             Text = "Save";
             ResumeLayout(false);
             PerformLayout();

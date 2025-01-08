@@ -122,13 +122,13 @@
             // 
             // btnStart
             // 
-            btnStart.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnStart.Anchor = AnchorStyles.Top;
             btnStart.BackColor = Color.DarkGreen;
             btnStart.FlatAppearance.MouseOverBackColor = Color.ForestGreen;
             btnStart.FlatStyle = FlatStyle.Flat;
             btnStart.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnStart.ForeColor = Color.FloralWhite;
-            btnStart.Location = new Point(646, 129);
+            btnStart.Location = new Point(325, 129);
             btnStart.Name = "btnStart";
             btnStart.Size = new Size(150, 36);
             btnStart.TabIndex = 3;
@@ -286,7 +286,7 @@
             btnSaveLoad.FlatStyle = FlatStyle.Flat;
             btnSaveLoad.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnSaveLoad.ForeColor = Color.FloralWhite;
-            btnSaveLoad.Location = new Point(490, 129);
+            btnSaveLoad.Location = new Point(646, 129);
             btnSaveLoad.Name = "btnSaveLoad";
             btnSaveLoad.Size = new Size(150, 36);
             btnSaveLoad.TabIndex = 24;

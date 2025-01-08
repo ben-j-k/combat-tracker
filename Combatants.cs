@@ -23,6 +23,15 @@ namespace CombatTracker
 
         }
 
+        public void LoadCombatants(List<Combatant> existingCombatants)
+        {
+            newCombatants = existingCombatants;
+            foreach (Combatant combatant in newCombatants)
+            {
+                lbCombatants.Items.Add(Convert.ToString(combatant.Name));
+            }
+        }
+
         private void btnAddSave_Click(object sender, EventArgs e)
         {
             string name = txtNameInput.Text;

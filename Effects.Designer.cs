@@ -55,10 +55,10 @@
             // 
             label2.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             label2.AutoSize = true;
-            label2.Font = new Font("Century Gothic", 9.75F);
+            label2.Font = new Font("Perpetua Titling MT", 9.75F);
             label2.Location = new Point(39, 334);
             label2.Name = "label2";
-            label2.Size = new Size(138, 17);
+            label2.Size = new Size(161, 15);
             label2.TabIndex = 4;
             label2.Text = "Inactive Conditions:";
             // 
@@ -93,10 +93,10 @@
             // 
             label3.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             label3.AutoSize = true;
-            label3.Font = new Font("Century Gothic", 9.75F);
+            label3.Font = new Font("Perpetua Titling MT", 9.75F);
             label3.Location = new Point(39, 133);
             label3.Name = "label3";
-            label3.Size = new Size(127, 17);
+            label3.Size = new Size(146, 15);
             label3.TabIndex = 9;
             label3.Text = "Active Conditions:";
             // 

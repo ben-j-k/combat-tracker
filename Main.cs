@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using System.Windows.Forms;
 
 namespace CombatTracker
@@ -272,6 +273,7 @@ namespace CombatTracker
 
         private void btnAddOrDelete_Click(object sender, EventArgs e)
         {
+            addForm.LoadCombatants(Game.Combatants);
             addForm.ShowDialog();
         }
 
@@ -294,6 +296,12 @@ namespace CombatTracker
         {
             Save save = new Save(Game);
             save.ShowDialog();
+            Game = save.CurrentGame;
+            InitializeDataGridView();
+            txtRoundNum.Text = Game.RoundNumber.ToString();
+            HighlightCurrentTurn();
+            AddNewRoundColumn();
+            btnStart.Visible = false;
         }
     }
 }

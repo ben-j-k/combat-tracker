@@ -275,6 +275,8 @@ namespace CombatTracker
         {
             addForm.LoadCombatants(Game.Combatants);
             addForm.ShowDialog();
+            Game.Combatants = addForm.newCombatants;
+            InitializeDataGridView();
         }
 
 

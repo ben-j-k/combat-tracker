@@ -40,3 +40,5 @@ D:\TAFE\Cert IV\Programming\CombatTracker\CombatTracker\obj\Release\net8.0-windo
 D:\TAFE\Cert IV\Programming\CombatTracker\CombatTracker\obj\Release\net8.0-windows\refint\Combat Tracker.dll
 D:\TAFE\Cert IV\Programming\CombatTracker\CombatTracker\obj\Release\net8.0-windows\Combat Tracker.pdb
 D:\TAFE\Cert IV\Programming\CombatTracker\CombatTracker\obj\Release\net8.0-windows\ref\Combat Tracker.dll
+D:\TAFE\Cert IV\Programming\CombatTracker\CombatTracker\obj\Release\net8.0-windows\CombatTracker.Save.resources
+D:\TAFE\Cert IV\Programming\CombatTracker\CombatTracker\obj\Release\net8.0-windows\CombatTracker.SaveNameInput.resources

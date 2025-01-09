@@ -26,6 +26,7 @@ namespace CombatTracker
         public void LoadCombatants(List<Combatant> existingCombatants)
         {
             newCombatants = existingCombatants;
+            lbCombatants.Items.Clear();
             foreach (Combatant combatant in newCombatants)
             {
                 lbCombatants.Items.Add(Convert.ToString(combatant.Name));

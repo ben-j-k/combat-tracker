@@ -229,12 +229,7 @@ namespace CombatTracker
 
         private void btnStart_Click(object sender, EventArgs e)
         {
-            if (Game.Combatants == null)
-            {
-                MessageBox.Show("At least one combatant is required for combat");
-                return;
-            }
-            else if (Game.Combatants.Count == 0)
+            if (Game.Combatants.Count() <= 0)
             {
                 MessageBox.Show("At least one combatant is required for combat");
                 return;
@@ -257,7 +252,7 @@ namespace CombatTracker
 
         private void btnStatus_Click(object sender, EventArgs e)
         {
-            if (Game.Combatants == null)
+            if (Game.Combatants.Count() <= 0)
             {
                 MessageBox.Show("Please select a combatant to modify active conditions"); return;
             }

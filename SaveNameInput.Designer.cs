@@ -41,7 +41,7 @@
             label4.AutoSize = true;
             label4.Font = new Font("Poor Richard", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label4.ForeColor = Color.DarkGreen;
-            label4.Location = new Point(140, 29);
+            label4.Location = new Point(142, 40);
             label4.Name = "label4";
             label4.Size = new Size(116, 24);
             label4.TabIndex = 22;
@@ -51,10 +51,10 @@
             // 
             label1.Anchor = AnchorStyles.Top;
             label1.AutoSize = true;
-            label1.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.Location = new Point(41, 82);
+            label1.Font = new Font("Perpetua Titling MT", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label1.Location = new Point(42, 80);
             label1.Name = "label1";
-            label1.Size = new Size(117, 17);
+            label1.Size = new Size(125, 15);
             label1.TabIndex = 23;
             label1.Text = "Name your save:";
             label1.Click += label1_Click;
@@ -66,7 +66,7 @@
             txtSaveNameInput.BackColor = Color.White;
             txtSaveNameInput.BorderStyle = BorderStyle.None;
             txtSaveNameInput.Font = new Font("Century Gothic", 12F);
-            txtSaveNameInput.Location = new Point(43, 106);
+            txtSaveNameInput.Location = new Point(42, 100);
             txtSaveNameInput.Name = "txtSaveNameInput";
             txtSaveNameInput.Size = new Size(318, 20);
             txtSaveNameInput.TabIndex = 24;
@@ -79,7 +79,7 @@
             btnSave.FlatStyle = FlatStyle.Flat;
             btnSave.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnSave.ForeColor = Color.FloralWhite;
-            btnSave.Location = new Point(268, 135);
+            btnSave.Location = new Point(267, 138);
             btnSave.MinimumSize = new Size(93, 36);
             btnSave.Name = "btnSave";
             btnSave.Size = new Size(93, 36);
@@ -96,7 +96,7 @@
             btnCancel.FlatStyle = FlatStyle.Flat;
             btnCancel.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnCancel.ForeColor = Color.FloralWhite;
-            btnCancel.Location = new Point(42, 135);
+            btnCancel.Location = new Point(41, 138);
             btnCancel.MinimumSize = new Size(93, 36);
             btnCancel.Name = "btnCancel";
             btnCancel.Size = new Size(93, 36);

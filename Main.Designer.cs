@@ -39,7 +39,6 @@
             btnStart = new Button();
             btnDemo = new Button();
             btnAddOrDelete = new Button();
-            btnRefresh = new Button();
             btnPrevious = new Button();
             btnStatus = new Button();
             btnDamageHeal = new Button();
@@ -78,11 +77,11 @@
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
             dataGridViewRounds.DefaultCellStyle = dataGridViewCellStyle2;
             dataGridViewRounds.GridColor = Color.Coral;
-            dataGridViewRounds.Location = new Point(15, 193);
+            dataGridViewRounds.Location = new Point(14, 193);
             dataGridViewRounds.Name = "dataGridViewRounds";
             dataGridViewRounds.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
             dataGridViewRounds.RowHeadersVisible = false;
-            dataGridViewRounds.Size = new Size(781, 240);
+            dataGridViewRounds.Size = new Size(832, 240);
             dataGridViewRounds.TabIndex = 0;
             dataGridViewRounds.TabStop = false;
             dataGridViewRounds.CellContentClick += dataGridViewRounds_CellContentClick;
@@ -96,11 +95,12 @@
             label1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             label1.AutoSize = true;
             label1.Font = new Font("Perpetua Titling MT", 9.75F);
-            label1.Location = new Point(644, 171);
+            label1.Location = new Point(708, 172);
+            label1.MinimumSize = new Size(119, 15);
             label1.Name = "label1";
             label1.Size = new Size(119, 15);
             label1.TabIndex = 14;
-            label1.Text = "Round Number:";
+            label1.Text = "Round:";
             label1.Click += label1_Click_1;
             // 
             // txtRoundNum
@@ -111,7 +111,7 @@
             txtRoundNum.CharacterCasing = CharacterCasing.Lower;
             txtRoundNum.Font = new Font("Perpetua Titling MT", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             txtRoundNum.ForeColor = Color.DarkGreen;
-            txtRoundNum.Location = new Point(769, 167);
+            txtRoundNum.Location = new Point(815, 168);
             txtRoundNum.Name = "txtRoundNum";
             txtRoundNum.ReadOnly = true;
             txtRoundNum.Size = new Size(31, 20);
@@ -128,9 +128,9 @@
             btnStart.FlatStyle = FlatStyle.Flat;
             btnStart.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnStart.ForeColor = Color.FloralWhite;
-            btnStart.Location = new Point(325, 129);
+            btnStart.Location = new Point(312, 129);
             btnStart.Name = "btnStart";
-            btnStart.Size = new Size(150, 36);
+            btnStart.Size = new Size(237, 36);
             btnStart.TabIndex = 3;
             btnStart.Text = "Start";
             btnStart.UseVisualStyleBackColor = false;
@@ -150,10 +150,12 @@
             btnDemo.TabStop = false;
             btnDemo.Text = "Demo";
             btnDemo.UseVisualStyleBackColor = false;
+            btnDemo.Visible = false;
             btnDemo.Click += btnDemo_Click;
             // 
             // btnAddOrDelete
             // 
+            btnAddOrDelete.AutoSize = true;
             btnAddOrDelete.BackColor = Color.DarkGreen;
             btnAddOrDelete.FlatAppearance.MouseOverBackColor = Color.ForestGreen;
             btnAddOrDelete.FlatStyle = FlatStyle.Flat;
@@ -167,21 +169,6 @@
             btnAddOrDelete.UseVisualStyleBackColor = false;
             btnAddOrDelete.Click += btnAddOrDelete_Click;
             // 
-            // btnRefresh
-            // 
-            btnRefresh.BackColor = Color.DarkGreen;
-            btnRefresh.FlatAppearance.MouseOverBackColor = Color.ForestGreen;
-            btnRefresh.FlatStyle = FlatStyle.Flat;
-            btnRefresh.Font = new Font("Century Gothic", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnRefresh.ForeColor = Color.FloralWhite;
-            btnRefresh.Location = new Point(227, 129);
-            btnRefresh.Name = "btnRefresh";
-            btnRefresh.Size = new Size(40, 36);
-            btnRefresh.TabIndex = 2;
-            btnRefresh.Text = "↻";
-            btnRefresh.UseVisualStyleBackColor = false;
-            btnRefresh.Click += btnRefresh_Click;
-            // 
             // btnPrevious
             // 
             btnPrevious.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
@@ -190,7 +177,7 @@
             btnPrevious.FlatStyle = FlatStyle.Flat;
             btnPrevious.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnPrevious.ForeColor = Color.FloralWhite;
-            btnPrevious.Location = new Point(15, 451);
+            btnPrevious.Location = new Point(14, 450);
             btnPrevious.MaximumSize = new Size(190, 36);
             btnPrevious.MinimumSize = new Size(150, 36);
             btnPrevious.Name = "btnPrevious";
@@ -208,11 +195,11 @@
             btnStatus.FlatStyle = FlatStyle.Flat;
             btnStatus.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnStatus.ForeColor = Color.FloralWhite;
-            btnStatus.Location = new Point(247, 451);
+            btnStatus.Location = new Point(235, 450);
             btnStatus.MaximumSize = new Size(190, 36);
             btnStatus.MinimumSize = new Size(150, 36);
             btnStatus.Name = "btnStatus";
-            btnStatus.Size = new Size(150, 36);
+            btnStatus.Size = new Size(190, 36);
             btnStatus.TabIndex = 5;
             btnStatus.Text = "Add/Remove Effect";
             btnStatus.UseVisualStyleBackColor = false;
@@ -226,11 +213,11 @@
             btnDamageHeal.FlatStyle = FlatStyle.Flat;
             btnDamageHeal.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnDamageHeal.ForeColor = Color.FloralWhite;
-            btnDamageHeal.Location = new Point(404, 451);
+            btnDamageHeal.Location = new Point(431, 450);
             btnDamageHeal.MaximumSize = new Size(190, 36);
             btnDamageHeal.MinimumSize = new Size(150, 36);
             btnDamageHeal.Name = "btnDamageHeal";
-            btnDamageHeal.Size = new Size(150, 36);
+            btnDamageHeal.Size = new Size(190, 36);
             btnDamageHeal.TabIndex = 6;
             btnDamageHeal.Text = "Damage/Heal";
             btnDamageHeal.UseVisualStyleBackColor = false;
@@ -245,7 +232,7 @@
             btnNext.FlatStyle = FlatStyle.Flat;
             btnNext.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnNext.ForeColor = Color.FloralWhite;
-            btnNext.Location = new Point(646, 451);
+            btnNext.Location = new Point(696, 450);
             btnNext.MaximumSize = new Size(190, 36);
             btnNext.MinimumSize = new Size(150, 36);
             btnNext.Name = "btnNext";
@@ -259,7 +246,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Perpetua Titling MT", 9.75F);
-            label2.Location = new Point(24, 171);
+            label2.Location = new Point(14, 172);
             label2.Name = "label2";
             label2.Size = new Size(100, 15);
             label2.TabIndex = 22;
@@ -270,7 +257,7 @@
             pictureBox1.Anchor = AnchorStyles.Top;
             pictureBox1.BackgroundImage = Properties.Resources.CombatTrackerTxt;
             pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
-            pictureBox1.Location = new Point(60, 23);
+            pictureBox1.Location = new Point(88, 40);
             pictureBox1.MaximumSize = new Size(686, 73);
             pictureBox1.MinimumSize = new Size(686, 73);
             pictureBox1.Name = "pictureBox1";
@@ -286,7 +273,7 @@
             btnSaveLoad.FlatStyle = FlatStyle.Flat;
             btnSaveLoad.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnSaveLoad.ForeColor = Color.FloralWhite;
-            btnSaveLoad.Location = new Point(646, 129);
+            btnSaveLoad.Location = new Point(696, 129);
             btnSaveLoad.Name = "btnSaveLoad";
             btnSaveLoad.Size = new Size(150, 36);
             btnSaveLoad.TabIndex = 24;
@@ -296,10 +283,11 @@
             // 
             // BaseForm
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
+            AutoScaleDimensions = new SizeF(96F, 96F);
+            AutoScaleMode = AutoScaleMode.Dpi;
+            AutoSize = true;
             BackColor = Color.FloralWhite;
-            ClientSize = new Size(804, 498);
+            ClientSize = new Size(860, 498);
             Controls.Add(btnSaveLoad);
             Controls.Add(pictureBox1);
             Controls.Add(label2);
@@ -307,7 +295,6 @@
             Controls.Add(btnDamageHeal);
             Controls.Add(btnStatus);
             Controls.Add(btnPrevious);
-            Controls.Add(btnRefresh);
             Controls.Add(btnAddOrDelete);
             Controls.Add(btnDemo);
             Controls.Add(txtRoundNum);
@@ -336,7 +323,6 @@
         private Button btnStart;
         private Button btnDemo;
         private Button btnAddOrDelete;
-        private Button btnRefresh;
         private Button btnPrevious;
         private Button btnStatus;
         private Button btnDamageHeal;

@@ -41,5 +41,10 @@ namespace CombatTracker
             Passed = false;
             Close();
         }
+
+        private void txtName_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

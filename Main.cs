@@ -48,6 +48,7 @@ namespace CombatTracker
 
         private void HighlightCurrentTurn()
         {
+            if (Game.Combatants.Count() <= 0) { return; }
             if (Game.CurrentPlayerIndex == 0)
             {
                 if (Game.Combatants[Game.Combatants.Count - 1].CurrentHP <= 0)
@@ -151,7 +152,7 @@ namespace CombatTracker
 
         private void btnDamageHeal_Click(object sender, EventArgs e)
         {
-            if (Game.Combatants == null)
+            if (Game.Combatants.Count() == 0)
             {
                 MessageBox.Show("Please select a combatant to damage or heal"); return;
             }
@@ -298,12 +299,16 @@ namespace CombatTracker
         {
             Save save = new Save(Game);
             save.ShowDialog();
-            Game = save.CurrentGame;
-            InitializeDataGridView();
-            txtRoundNum.Text = Game.RoundNumber.ToString();
-            HighlightCurrentTurn();
-            AddNewRoundColumn();
-            btnStart.Visible = false;
+            if (Game == save.CurrentGame) { return; }
+            else
+            {
+                Game = save.CurrentGame;
+                InitializeDataGridView();
+                txtRoundNum.Text = Game.RoundNumber.ToString();
+                HighlightCurrentTurn();
+                AddNewRoundColumn();
+                btnStart.Visible = false;
+            }
         }
     }
 }

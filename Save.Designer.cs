@@ -43,9 +43,9 @@
             lbSaves.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lbSaves.FormattingEnabled = true;
             lbSaves.ItemHeight = 17;
-            lbSaves.Location = new Point(64, 105);
+            lbSaves.Location = new Point(61, 100);
             lbSaves.Name = "lbSaves";
-            lbSaves.Size = new Size(348, 136);
+            lbSaves.Size = new Size(348, 153);
             lbSaves.TabIndex = 9;
             lbSaves.SelectedIndexChanged += lbSaves_SelectedIndexChanged;
             // 
@@ -55,7 +55,7 @@
             label4.AutoSize = true;
             label4.Font = new Font("Poor Richard", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label4.ForeColor = Color.DarkGreen;
-            label4.Location = new Point(135, 26);
+            label4.Location = new Point(123, 40);
             label4.Name = "label4";
             label4.Size = new Size(226, 24);
             label4.TabIndex = 21;
@@ -66,7 +66,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Perpetua Titling MT", 9.75F);
-            label2.Location = new Point(64, 87);
+            label2.Location = new Point(61, 80);
             label2.Name = "label2";
             label2.Size = new Size(97, 15);
             label2.TabIndex = 23;
@@ -81,7 +81,7 @@
             btnLoad.FlatStyle = FlatStyle.Flat;
             btnLoad.Font = new Font("Century Gothic", 9.75F);
             btnLoad.ForeColor = Color.FloralWhite;
-            btnLoad.Location = new Point(252, 265);
+            btnLoad.Location = new Point(249, 272);
             btnLoad.Name = "btnLoad";
             btnLoad.Size = new Size(163, 36);
             btnLoad.TabIndex = 24;
@@ -97,7 +97,7 @@
             btnSave.FlatStyle = FlatStyle.Flat;
             btnSave.Font = new Font("Century Gothic", 9.75F);
             btnSave.ForeColor = Color.FloralWhite;
-            btnSave.Location = new Point(60, 265);
+            btnSave.Location = new Point(61, 272);
             btnSave.Name = "btnSave";
             btnSave.Size = new Size(163, 36);
             btnSave.TabIndex = 25;
